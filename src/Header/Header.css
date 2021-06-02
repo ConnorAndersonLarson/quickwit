@@ -7,4 +7,7 @@
   margin: 0;
   height: stretch;
   padding: 2.5vh;
+  font-weight: 300;
+  color: black;
+  font-size: 4vh;
 }

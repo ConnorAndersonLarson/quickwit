@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 function Header() {
 
   return (
     <header className="heading">
-      <h1 className="title">QuickWit</h1>
+      <Link exact to='/' className="title">QuickWit</Link>
     </header>
   )
 }
