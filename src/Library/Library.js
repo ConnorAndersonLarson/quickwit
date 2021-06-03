@@ -2,7 +2,7 @@ import Tile from '../Tile/Tile.js';
 import './Library.css';
 
 
-const Library = ( { articles, error } ) => {
+const Library = ( { articles, cleanTitle, cleanDate, selectArticle, error } ) => {
   const allTiles = articles.map((art, i) => {
     return(
       <Tile
@@ -10,6 +10,9 @@ const Library = ( { articles, error } ) => {
         title={art.title}
         author={art.byline}
         published={art.published_date}
+        cleanTitle={cleanTitle}
+        cleanDate={cleanDate}
+        selectArticle={selectArticle}
       />
     )
   })

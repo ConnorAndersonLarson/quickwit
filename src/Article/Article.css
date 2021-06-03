@@ -1,0 +1,63 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 88vh;
+}
+
+.artTitle {
+  font-weight: 400;
+  padding: 10px;
+  margin: 0px;
+}
+
+.artBox {
+  display:flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.artAuthor, .artDate {
+  font-weight: 300;
+  padding: 5px;
+}
+
+.artAbst {
+  padding: 5px 10px 5px 10px;
+}
+
+.artPic {
+  height:25vh;
+}
+
+.artCap {
+  font-size: 12.5px;
+
+}
+
+.buttons {
+  width: 100vw;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #f5dede;
+  height:12vh;
+}
+
+.artBut {
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #f5dede;
+  box-shadow:
+    inset 0px 0px 0px 0 #AEAEC0,
+    inset 0px 0px 0px 0 #f6f2f2,
+    3px 3px 3px 0 #f6f2f2,
+    -3px -3px 3px 0 #AEAEC0;
+  line-height: 50px;
+  color: black;
+  text-decoration: none;
+}
