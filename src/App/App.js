@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router';
-import { getArticles } from '../apiCall.js';
-import './App.css';
+import { getArticles, filteredArticles } from '../apiCall.js';
 import Header from '../Header/Header.js';
 import Library from '../Library/Library.js';
 import Article from '../Article/Article.js';
+import Sort from '../Sort/Sort.js';
+import './App.css';
 
 function App() {
   const [allArticles, setAllArticles] = useState([]);
@@ -27,8 +28,8 @@ function App() {
   }, [])
 
   const filterData = (type) => {
-    const getData = async () => {
-      getArticles(type)
+    const getData = async (typeTwo) => {
+      filteredArticles(typeTwo)
         .then(response => response.json())
         .then(art => {
           if ( art.status === 'OK') {
@@ -38,7 +39,8 @@ function App() {
           }})
         .catch(err=> setError('There seems to be a problem...'))
     }
-    getData();
+    getData(type);
+    console.log(allArticles)
   }
 
   const cleanTitle = (title) => {
@@ -62,9 +64,10 @@ function App() {
       <div className="body">
         <Switch>
           <Route exact path="/">
+            <Sort filterData={filterData}/>
             <Library articles={allArticles} cleanTitle={cleanTitle} cleanDate={cleanDate} selectArticle={selectArticle}  error={error} />
           </ Route>
-          <Route exact path="/:title" render={({ match }) => {
+          <Route path="/:title" render={({ match }) => {
             const clickedArticle = allArticles.find(art => cleanTitle(art.title) === cleanTitle(match.params.title));
             return(
               <Article article={article} cleanDate={cleanDate} />
