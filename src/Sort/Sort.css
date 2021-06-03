@@ -1,0 +1,12 @@
+.sortButtons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.radBox {
+  width: 25%;
+  margin: 5px 0 5px 0;
+}

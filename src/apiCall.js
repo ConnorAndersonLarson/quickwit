@@ -5,3 +5,11 @@ export const getArticles = () => {
     }
   })
 }
+
+export const filteredArticles = (type) => {
+  return fetch(`https://api.nytimes.com/svc/topstories/v2/${type}.json?api-key=${process.env.REACT_APP_API_KEY}`, {
+    headers: {
+      'accept': 'application/json'
+    }
+  })
+}
