@@ -4,9 +4,21 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 50px;
+  width: 100vw;
 }
 
 .radBox {
   width: 25%;
   margin: 5px 0 5px 0;
+}
+
+@media only screen and (min-width: 850px) {
+  .sortButtons {
+    margin: auto;
+    width: 100vw;
+  }
+
+  .radBox {
+    width: 100px;
+  }
 }
