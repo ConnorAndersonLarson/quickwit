@@ -1,9 +1,18 @@
 import './Tile.css';
 
-function Tile() {
+const Tile = ( { title, author, published } ) => {
+
+  const cleanDate = () => {
+    return published.substr(0,10)
+  }
+
 
   return(
-    <h3>test</h3>
+    <section className="tile">
+      <h3>{title}</h3>
+      <h4>{author}</h4>
+      <h4>{cleanDate()}</h4>
+    </section>
   )
 }
 
