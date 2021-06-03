@@ -9,3 +9,11 @@
   margin: 3vh 0 3vh 0;
   background-color: #F0F0F3;
 }
+
+@media only screen and (min-width: 850px) {
+  .library {
+    grid-template-columns: repeat(auto-fit, 360px);
+    grid-template-rows: repeat(auto, 240px);
+  }
+
+}

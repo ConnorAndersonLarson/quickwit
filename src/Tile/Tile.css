@@ -1,6 +1,8 @@
 .tile {
   border-radius: 15px;
   box-shadow:
+   inset 0px 0px 0px 0 #FFFFFF,
+   inset 0px 0px 0px 0 #AEAEC0,
    10px 10px 30px 0 #FFFFFF,
    -10px -10px 30px 0 #AEAEC0;
    background-color: #F0F0F3;
@@ -21,4 +23,38 @@
 
 .tileText {
   font-weight: 200;
+}
+
+@media only screen and (min-width: 850px) {
+  .tile {
+    transition: linear .15s;
+  }
+
+  .tile:hover {
+    box-shadow:
+     inset 10px 10px 30px 0 #FFFFFF,
+     inset -10px -10px 30px 0 #AEAEC0,
+     0px 0px 0px 0 #FFFFFF,
+     0px 0px 0px 0 #AEAEC0;
+  }
+
+  .tileTitle {
+    font-size: 19px;
+    transition: linear .15s;
+  }
+
+  .tile:hover .tileTitle {
+    font-size: 18px;
+  }
+
+  .tileText {
+    font-size: 16px;
+    transition: linear .15s;
+  }
+
+  .tile:hover .tileText {
+    font-size: 15px;
+  }
+
+
 }

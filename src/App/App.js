@@ -40,7 +40,6 @@ function App() {
         .catch(err=> setError('There seems to be a problem...'))
     }
     getData(type);
-    console.log(allArticles)
   }
 
   const cleanTitle = (title) => {
@@ -68,7 +67,6 @@ function App() {
             <Library articles={allArticles} cleanTitle={cleanTitle} cleanDate={cleanDate} selectArticle={selectArticle}  error={error} />
           </ Route>
           <Route path="/:title" render={({ match }) => {
-            const clickedArticle = allArticles.find(art => cleanTitle(art.title) === cleanTitle(match.params.title));
             return(
               <Article article={article} cleanDate={cleanDate} />
             )
