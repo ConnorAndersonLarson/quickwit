@@ -26,6 +26,21 @@ function App() {
     getData();
   }, [])
 
+  const filterData = (type) => {
+    const getData = async () => {
+      getArticles(type)
+        .then(response => response.json())
+        .then(art => {
+          if ( art.status === 'OK') {
+            setAllArticles(art.results)
+          } else {
+            setError('There seems to be a problem...')
+          }})
+        .catch(err=> setError('There seems to be a problem...'))
+    }
+    getData();
+  }
+
   const cleanTitle = (title) => {
     return title.split(/[\s,'".]+/).join('')
   }
