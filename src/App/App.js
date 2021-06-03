@@ -26,7 +26,7 @@ function App() {
       <Header />
       <div className="body">
         <Switch>
-          <Route exact path="/" render={() => <Library />} />
+          <Route exact path="/" render={() => <Library articles={allArticles} />} />
         </Switch>
       </div>
     </div>
