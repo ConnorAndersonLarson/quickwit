@@ -51,7 +51,6 @@ function App() {
           </ Route>
           <Route exact path="/:title" render={({ match }) => {
             const clickedArticle = allArticles.find(art => cleanTitle(art.title) === cleanTitle(match.params.title));
-            console.log(article)
             return(
               <Article article={article} cleanDate={cleanDate} />
             )
