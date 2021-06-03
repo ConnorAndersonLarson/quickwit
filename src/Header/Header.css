@@ -1,6 +1,7 @@
 .heading {
   height: 10vh;
   background-color: #f5dede;
+  box-shadow: 0 10px 30px -30px #FFFFFF;
 }
 
 .title {

@@ -1,0 +1,7 @@
+.tile {
+  border-radius: 10px;
+  box-shadow:
+   10px 10px 30px 0 #FFFFFF,
+   -10px -10px 30px 0 #AEAEC0;
+   background-color: #F0F0F3;
+}
