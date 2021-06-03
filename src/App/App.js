@@ -30,9 +30,15 @@ function App() {
     return title.split(/[\s,'".]+/).join('')
   }
 
+  const cleanDate = (thisDate) => {
+    if (thisDate) {
+      return thisDate.substr(0,10)
+    }
+  }
+
   const selectArticle = (title) => {
-    const thisArticle = allArticles.find(art => art.title === title);
-    setArticle(thisArticle);
+    const thisArticle = allArticles.find(art => cleanTitle(art.title) === cleanTitle(title));
+    setArticle(thisArticle)
   }
 
   return (
@@ -40,15 +46,16 @@ function App() {
       <Header />
       <div className="body">
         <Switch>
+          <Route exact path="/">
+            <Library articles={allArticles} cleanTitle={cleanTitle} cleanDate={cleanDate} selectArticle={selectArticle}  error={error} />
+          </ Route>
           <Route exact path="/:title" render={({ match }) => {
             const clickedArticle = allArticles.find(art => cleanTitle(art.title) === cleanTitle(match.params.title));
+            console.log(article)
             return(
-              <Article article={allArticles[0]} />
+              <Article article={article} cleanDate={cleanDate} />
             )
           }} />
-          <Route exact path="/">
-            <Library articles={allArticles} cleanTitle={cleanTitle} selectArticle={selectArticle} error={error} />
-          </ Route>
         </ Switch>
       </div>
     </div>
