@@ -1,9 +1,13 @@
 import './Tile.css';
 
-function Tile() {
+const Tile = ( { title, author, published } ) => {
 
   return(
-    <h3>test</h3>
+    <section className="tile">
+      <h3>{title}</h3>
+      <h4>{author}</h4>
+      <h4>{published}</h4>
+    </section>
   )
 }
 

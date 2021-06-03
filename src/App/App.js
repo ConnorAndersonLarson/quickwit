@@ -9,16 +9,20 @@ function App() {
   const [allArticles, setAllArticles] = useState([])
   const [error, setError] = useState('')
 
-  useEffect(async () => {
-    getArticles()
-      .then(response => response.json())
-      .then(art => {
-        if ( art.status === 'OK') {
-          setAllArticles(art.results)
-        } else {
-          setError('There seems to be a problem...')
-        }})
-      .catch(err=> setError('There seems to be a problem...'))
+  useEffect(() => {
+    const getData = async () => {
+      getArticles()
+        .then(response => response.json())
+        .then(art => {
+          if ( art.status === 'OK') {
+            setAllArticles(art.results)
+          } else {
+            setError('There seems to be a problem...')
+          }})
+        .catch(err=> setError('There seems to be a problem...'))
+    }
+
+    getData();  
   }, [])
 
   return (
@@ -26,7 +30,7 @@ function App() {
       <Header />
       <div className="body">
         <Switch>
-          <Route exact path="/" render={() => <Library articles={allArticles} />} />
+          <Route exact path="/" render={() => <Library articles={allArticles} error={error} />} />
         </Switch>
       </div>
     </div>

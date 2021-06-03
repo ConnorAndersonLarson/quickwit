@@ -2,7 +2,7 @@ import Tile from '../Tile/Tile.js';
 import './Library.css';
 
 
-const Library = ( { articles } ) => {
+const Library = ( { articles, error } ) => {
   const allTiles = articles.map((art, i) => {
     return(
       <Tile
@@ -17,7 +17,8 @@ const Library = ( { articles } ) => {
 
   return(
     <div className="library">
-      {allTiles}
+      {!error && allTiles}
+      {!!error && <h2>It seems we have lost our wit</h2>}
     </div>
   )
 }
