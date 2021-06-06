@@ -30,13 +30,10 @@ QuickWit is an application designed for users to quickly learn about top stories
 ## Functionality
 * [Mobile View](#mobile-view)
 * [Desktop View](#desktop-view)
-* [Learning Goals](#learning-goals)
-* [Future Iterations](#future-iterations)
-* [Technologies Used](#technologies-used)
 
 #### Mobile View
   - QuickWit is a mobile first platform, allowing for quick scrolling through the site on phones and tablets.
-<img src="https://media.giphy.com/media/tXSXFfM4vGDyIOi1XP/giphy.gif" width="720">
+<img src="https://media.giphy.com/media/tXSXFfM4vGDyIOi1XP/giphy.gif" width="440">
 
 #### Desktop View
   - If a user wants to view the site from a their desktop QuickWit is responsive, also giving the user hover states for various buttons.
